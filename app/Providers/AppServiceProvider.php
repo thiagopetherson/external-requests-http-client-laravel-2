@@ -23,6 +23,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->bind(
+            'App\Interfaces\MovieInterface',
+            'App\Repositories\MovieRepository'
+        );
+
+        $this->app->bind(
+            'App\Interfaces\GenreInterface',
+            'App\Repositories\GenreRepository'
+        );
     }
 }
